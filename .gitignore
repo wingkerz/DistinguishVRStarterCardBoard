@@ -1,0 +1,15 @@
+Library/
+packages/
+Temp/
+obj/
+Release/
+Log/
+Bundles/
+Assets/Log/
+Export/
+UnityPackageManager/
+.vs/
+*.csproj
+*.sln
+*.apk
+*.pfx
