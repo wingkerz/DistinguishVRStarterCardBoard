@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
 
@@ -76,6 +77,17 @@ public class Manager : MonoBehaviour {
 
     }
 
+
+    IEnumerator countTime() {
+
+        yield return new WaitForSeconds(90.0f);
+
+        //游戏结束逻辑
+
+        //Application.Quit();
+
+        //SceneManager.LoadScene(0);
+    }
 
 
 }
