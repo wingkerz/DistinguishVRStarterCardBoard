@@ -837,12 +837,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 42872532}
-  m_LocalRotation: {x: -0.48807344, y: -0, z: -0, w: 0.8728025}
-  m_LocalPosition: {x: -3.642, y: 0.15070084, z: 4.601}
+  m_LocalRotation: {x: -0.48807347, y: -0, z: -0, w: 0.87280256}
+  m_LocalPosition: {x: -2.4662328, y: -0.81279695, z: 6.221197}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 173119848}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -58.428, y: 0, z: 0}
 --- !u!4 &43133309 stripped
 Transform:
@@ -929,12 +929,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 93834502}
-  m_LocalRotation: {x: -0.48807344, y: -0, z: -0, w: 0.8728025}
-  m_LocalPosition: {x: -0.323, y: 0.15070084, z: 1.299}
-  m_LocalScale: {x: 0.15734623, y: 0.15734619, z: 0.15734619}
+  m_LocalRotation: {x: -0.48807347, y: -0, z: -0, w: 0.87280256}
+  m_LocalPosition: {x: 0.85276705, y: -0.81279695, z: 2.919197}
+  m_LocalScale: {x: 0.15734623, y: 0.15734616, z: 0.15734616}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 173119848}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -58.428, y: 0, z: 0}
 --- !u!114 &93834507
 MonoBehaviour:
@@ -1032,11 +1032,19 @@ MonoBehaviour:
         x: 347
         y: 114
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: State 1
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetPosition
@@ -1044,16 +1052,18 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.iTweenScaleTo
         - HutongGames.PlayMaker.Actions.iTweenScaleTo
         - HutongGames.PlayMaker.Actions.iTweenScaleTo
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010100
-        actionIsOpen: 0000000100
-        actionStartIndex: 0000000007000000200000002e0000003c000000
-        actionHashCodes: 5552ad057bce76049cadd2049cadd2049cadd204
+        - 
+        actionEnabled: 010101010001
+        actionIsOpen: 000000000001
+        actionStartIndex: 0000000007000000200000002e0000003c0000004a000000
+        actionHashCodes: 5552ad057bce76049cadd2049cadd2049cadd20448c01101
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -1265,6 +1275,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -1407,14 +1423,15 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 000000000000000000150000000000000000000000150000000000000015000000000000001500000000000000
+        - FINISHED
+        byteData: 00000000000000000015000000000000000000000015000000000000001500000000000000150000000000000000
         arrayParamSizes: 0000000000000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmGameObject
         - HutongGames.PlayMaker.FsmVector3
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001c0000000f0000000f0000000f00000007000000010000001400000012000000130000001c0000000f0000000f0000000f00000007000000070000000700000011000000130000001c0000000f00000007000000110000000f0000000c0000000c0000001100000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f00000007000000070000001700000017000000110000001100000011000000
+        paramDataType: 140000001c0000000f0000000f0000000f00000007000000010000001400000012000000130000001c0000000f0000000f0000000f00000007000000070000000700000011000000130000001c0000000f00000007000000110000000f0000000c0000000c0000001100000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000000f0000001700000001000000
         paramName:
         - gameObject
         - vector
@@ -1490,9 +1507,15 @@ MonoBehaviour:
         - realTime
         - stopOnExit
         - loopDontFinish
-        paramDataPos: 000000000000000000000000010000000200000000000000040000000100000000000000000000000100000003000000040000000500000005000000090000000d0000000000000001000000020000000600000011000000010000000700000000000000010000000200000000000000010000000300000004000000050000000200000001000000020000000300000008000000090000000a00000015000000190000000200000003000000060000000700000008000000030000000200000003000000040000000b0000000c0000000d0000001d000000210000000400000005000000090000000a0000000b000000040000000300000004000000050000000e0000000f00000010000000250000002900000006000000070000000c0000000d0000000e000000
-        paramByteDataSize: 0000000000000000000000000000000000000000040000000100000000000000000000000000000000000000000000000000000000000000040000000400000004000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 000000000000000000000000010000000200000000000000040000000100000000000000000000000100000003000000040000000500000005000000090000000d0000000000000001000000020000000600000011000000010000000700000000000000010000000200000000000000010000000300000004000000050000000200000001000000020000000300000008000000090000000a00000015000000190000000200000003000000060000000700000008000000030000000200000003000000040000000b0000000c0000000d0000001d000000210000000400000005000000090000000a0000000b000000040000000300000004000000050000000e0000000f00000010000000250000002900000006000000070000000c0000000d0000000e00000011000000080000002d000000
+        paramByteDataSize: 0000000000000000000000000000000000000000040000000100000000000000000000000000000000000000000000000000000000000000040000000400000004000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000
     events:
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
     - name: n
       isSystemEvent: 0
       isGlobal: 0
@@ -1690,6 +1713,39 @@ Transform:
   m_Father: {fileID: 1263364158}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 15.133, y: -19.447, z: 18.592001}
+--- !u!1 &173119847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 173119848}
+  m_Layer: 0
+  m_Name: '[MovePoints]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &173119848
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173119847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1757671, y: 0.96349776, z: -1.6201972}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 93834506}
+  - {fileID: 724896758}
+  - {fileID: 215657804}
+  - {fileID: 42872539}
+  - {fileID: 487964368}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &215657797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,13 +2470,121 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215657797}
-  m_LocalRotation: {x: -0.48807344, y: -0, z: -0, w: 0.8728025}
-  m_LocalPosition: {x: -2.129, y: 0.15070084, z: 4.726}
+  m_LocalRotation: {x: -0.48807347, y: -0, z: -0, w: 0.87280256}
+  m_LocalPosition: {x: -0.9532329, y: -0.81279695, z: 6.346197}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 173119848}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -58.428, y: 0, z: 0}
+--- !u!1 &347479867 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+  m_PrefabInternal: {fileID: 439509423}
+--- !u!114 &347479868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347479867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56a6bd9420339448b53c00e6f8abe13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &347479869
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347479867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0137646, y: 0.5782669, z: 2.1767402}
+  m_Center: {x: 0, y: 0, z: -0.00000005960466}
+--- !u!114 &347479870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347479867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8cac3fc2a32bd46ab21945594e9ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Obj: {fileID: 347479868}
+  showSth: []
+  hideSth:
+  - {fileID: 2014467447}
+  isHideMyself: 0
+--- !u!114 &347479871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347479867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2eecc491f494742995950b602d9838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Obj: {fileID: 347479868}
+  _manager: {fileID: 1483016342}
+  addSafeNumber: 2
+  addMoneyNumber: 3
+--- !u!1001 &439509423
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.853
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 83bac743435746846aad4ce2e096242e, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &487964361
 GameObject:
   m_ObjectHideFlags: 0
@@ -3145,12 +3309,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 487964361}
-  m_LocalRotation: {x: -0.48807344, y: -0, z: -0, w: 0.8728025}
-  m_LocalPosition: {x: -1.34, y: 0.15070084, z: 8.33}
+  m_LocalRotation: {x: -0.48807347, y: -0, z: -0, w: 0.87280256}
+  m_LocalPosition: {x: -0.16423297, y: -0.81279695, z: 9.950197}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 173119848}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -58.428, y: 0, z: 0}
 --- !u!4 &615352312 stripped
 Transform:
@@ -3266,11 +3430,19 @@ MonoBehaviour:
         x: 347
         y: 114
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: State 1
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetPosition
@@ -3278,16 +3450,18 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.iTweenScaleTo
         - HutongGames.PlayMaker.Actions.iTweenScaleTo
         - HutongGames.PlayMaker.Actions.iTweenScaleTo
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0000000101
-        actionStartIndex: 0000000007000000200000002e0000003c000000
-        actionHashCodes: 5552ad057bce76049cadd2049cadd2049cadd204
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 000000000001
+        actionStartIndex: 0000000007000000200000002e0000003c0000004a000000
+        actionHashCodes: 5552ad057bce76049cadd2049cadd2049cadd20448c01101
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -3499,6 +3673,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -3641,14 +3821,15 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 000000000000000000150000000000000000000000150000000000000015000000000000001500000000000000
+        - 
+        byteData: 00000000000000000015000000000000000000000015000000000000001500000000000000150000000000000000
         arrayParamSizes: 0000000000000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmGameObject
         - HutongGames.PlayMaker.FsmVector3
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001c0000000f0000000f0000000f00000007000000010000001400000012000000130000001c0000000f0000000f0000000f00000007000000070000000700000011000000130000001c0000000f00000007000000110000000f0000000c0000000c0000001100000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f00000007000000070000001700000017000000110000001100000011000000
+        paramDataType: 140000001c0000000f0000000f0000000f00000007000000010000001400000012000000130000001c0000000f0000000f0000000f00000007000000070000000700000011000000130000001c0000000f00000007000000110000000f0000000c0000000c0000001100000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000001400000012000000130000001c0000000f0000000f0000000f000000070000000700000017000000170000001100000011000000110000000f0000001700000001000000
         paramName:
         - gameObject
         - vector
@@ -3724,9 +3905,15 @@ MonoBehaviour:
         - realTime
         - stopOnExit
         - loopDontFinish
-        paramDataPos: 000000000000000000000000010000000200000000000000040000000100000000000000000000000100000003000000040000000500000005000000090000000d0000000000000001000000020000000600000011000000010000000700000000000000010000000200000000000000010000000300000004000000050000000200000001000000020000000300000008000000090000000a00000015000000190000000200000003000000060000000700000008000000030000000200000003000000040000000b0000000c0000000d0000001d000000210000000400000005000000090000000a0000000b000000040000000300000004000000050000000e0000000f00000010000000250000002900000006000000070000000c0000000d0000000e000000
-        paramByteDataSize: 0000000000000000000000000000000000000000040000000100000000000000000000000000000000000000000000000000000000000000040000000400000004000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 000000000000000000000000010000000200000000000000040000000100000000000000000000000100000003000000040000000500000005000000090000000d0000000000000001000000020000000600000011000000010000000700000000000000010000000200000000000000010000000300000004000000050000000200000001000000020000000300000008000000090000000a00000015000000190000000200000003000000060000000700000008000000030000000200000003000000040000000b0000000c0000000d0000001d000000210000000400000005000000090000000a0000000b000000040000000300000004000000050000000e0000000f00000010000000250000002900000006000000070000000c0000000d0000000e00000011000000080000002d000000
+        paramByteDataSize: 0000000000000000000000000000000000000000040000000100000000000000000000000000000000000000000000000000000000000000040000000400000004000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000040000000000000000000000000000000000000000000000000000000000000001000000
     events:
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
     - name: n
       isSystemEvent: 0
       isGlobal: 0
@@ -3884,12 +4071,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 724896751}
-  m_LocalRotation: {x: -0.48807344, y: -0, z: -0, w: 0.8728025}
-  m_LocalPosition: {x: -0.917, y: 0.15070084, z: 3.02}
+  m_LocalRotation: {x: -0.48807347, y: -0, z: -0, w: 0.87280256}
+  m_LocalPosition: {x: 0.25876707, y: -0.81279695, z: 4.6401973}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 173119848}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -58.428, y: 0, z: 0}
 --- !u!1001 &783265643
 Prefab:
@@ -4013,6 +4200,56 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 5862bbfe91a75054ca72c13b555b6ac5, type: 2}
   m_PrefabInternal: {fileID: 783265643}
+--- !u!1001 &1035572189
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1263364158}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8882775
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8882775
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1001 &1204182404
 Prefab:
   m_ObjectHideFlags: 0
@@ -4114,6 +4351,7 @@ Transform:
   - {fileID: 615352312}
   - {fileID: 688512736}
   - {fileID: 1204182405}
+  - {fileID: 1654272771}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4285,6 +4523,50 @@ Prefab:
     - {fileID: 6400000, guid: 9ae7f9f9eacff4142b21eb85ae606fdc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9ae7f9f9eacff4142b21eb85ae606fdc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1483016341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1483016343}
+  - component: {fileID: 1483016342}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1483016342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483016341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41a02ab0b77ad74eb73914a19be6e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safePoints: 0
+  MoneyPoints: 0
+  hasGetTheCup: 0
+  hasGetTheDistinguish: 0
+--- !u!4 &1483016343
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483016341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1595124985
 GameObject:
   m_ObjectHideFlags: 0
@@ -4333,8 +4615,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1654272771 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 21b25e12b79b96842a1c0a9b0060c353, type: 3}
+  m_PrefabInternal: {fileID: 1035572189}
 --- !u!1001 &1723492651
 Prefab:
   m_ObjectHideFlags: 0
@@ -4458,6 +4744,10 @@ GameObject:
   m_PrefabParentObject: {fileID: 1213791877768522, guid: e1d4ae6f57479ba46a6b364918980441,
     type: 2}
   m_PrefabInternal: {fileID: 2043647091}
+--- !u!1 &2014467447 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 9ae7f9f9eacff4142b21eb85ae606fdc, type: 2}
+  m_PrefabInternal: {fileID: 1388075773}
 --- !u!1001 &2043647091
 Prefab:
   m_ObjectHideFlags: 0
